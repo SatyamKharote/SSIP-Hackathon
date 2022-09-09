@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="{% static 'office/common.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body id="body-toggle">
+    <div class="container-fluid dashboard">
+      <div class="menu-bar">
+        <div style="height:150px;">
+            <h1>Logo</h1>
+        </div>
+          <div class="side-bar">
+              <div>
+                <div class="menu-item-text">Dashboard</div>
+
+                <div style="margin-top:1px;" class="menu-item-text">Report</div>
+                <div style="margin-top:1px;" class="menu-item-text">Generate QR Code</div>
+                <div style="margin-top:1px;" class="menu-item-text">Create User</div>
+                <div style="margin-top:1px;" class="menu-item-text">Change Password</div>
+                <div style="margin-top:1px;" class="menu-item-text">Logout</div>
+              </div>
+          </div>
+      </div>
+      <div class="content">
+        <div class="header"><img src="{% static 'icons/more.png' %}" id="toggle"></img></div>
+      </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script>
+    $('document').ready(function(){
+        $('#toggle').click(function(){
+          $('.menu-bar').toggle();
+          $('.content').css('width','100% !important;');
+        });
+    });
+  </script>
+  </body>
+</html>

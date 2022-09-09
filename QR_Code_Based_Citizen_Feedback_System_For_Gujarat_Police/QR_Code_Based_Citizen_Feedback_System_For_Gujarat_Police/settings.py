@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'QR_Code_Feedback',
+    'office_view'
 ]
 
 MIDDLEWARE = [
