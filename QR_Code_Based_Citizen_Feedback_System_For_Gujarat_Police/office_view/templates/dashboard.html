@@ -79,23 +79,23 @@
         </div>
       </div>
     </div>
-    <div class="display:flex; padding: 10px !important;">
-      <div style="width: 100%; display: flex; padding: 10px !important;" class="select-option">
-        <div style="width: 20%;">
+    <div class="display:flex;">
+      <div style="width: 100%; display: flex;" class="select-option">
+        <div style="width: 20%; margin-left: 10px;">
           <label class="sel-label"><b>Select By Date</b></label>
         </div>
         <div style="width: 80%; display: flex;">
-          <div>
-            <input type="date" class="form-control w-4we0">
+          <div style="margin-right:10px;">
+            <input type="date" class="form-control">
           </div>
           <div>
-            <input type="date" class="form-control w-4we0">
+            <input type="date" class="form-control" style="margin-right:0px;">
           </div>
+          <button class="btn btn-primary w-25" style="margin-left:10px;">Search</button>
+          <button class="btn btn-danger w-25" style="margin-left: 10px;">Reset</button>
         </div>
-        <button class="btn btn-primary h-50 mt-2 w-25" style="margin-left:10px;">Search</button>
-        <button class="btn btn-danger h-50 mt-2 w-25" style="margin-left: 10px;">Reset</button>
       </div>
-
+    </div>
   </form>
 </div>
 {% endblock %}

@@ -21,7 +21,7 @@
             </div>
             <div class="side-bar">
                 <div class="links">
-                    <span class="link-page-dashboard">
+                    <span id="link-page-dashboard">
                         <div class="menu-item-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
                                 <path
@@ -112,7 +112,7 @@
                 $('.content').css('width', '100% !important;');
             });
 
-            $('.link-page-dashboard').click(function () {
+            $('#link-page-dashboard').click(function () {
                 $('#body-toggle').load('app');
             });
 
