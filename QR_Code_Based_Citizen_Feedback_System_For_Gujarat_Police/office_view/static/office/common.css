@@ -45,6 +45,9 @@
     cursor:pointer;
     list-style:none;
 }
+.links{
+    margin-top:40px;
+}
 .header{
     height:70px;
     background-color:gray;
@@ -53,6 +56,20 @@
     margin-top:10px;
     height:40px;
     color:white;
+}
+.menu-item-text{
+    padding-left:20px;
+    margin-top:10px;
+}
+svg{
+    margin-right:10px;
+}
+.user-icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    border-radius:50%;
 }
 @media screen and (min-width: 1080px) {
   .login-form{
