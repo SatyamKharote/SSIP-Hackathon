@@ -1,5 +1,5 @@
 """
-ASGI config for QR_Code_Based_Citizen_Feedback_System_For_Gujarat_Police project.
+ASGI config for QR_Code_based_citizen_feedback_system_for_Gujarat_Police project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'QR_Code_Based_Citizen_Feedback_System_For_Gujarat_Police.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'QR_Code_based_citizen_feedback_system_for_Gujarat_Police.settings')
 
 application = get_asgi_application()
