@@ -1,4 +1,4 @@
-"""QR_Code_based_citizen_feedback_system_for_Gujarat_Police URL Configuration
+"""QR_Code_Based_Citizen_Feedback_System_For_Gujarat_Police URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from QR_Code_Feedback_System import views
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('QR_Code_Feedback.urls')),
+    path('office/', include('office_view.urls'))
 ]
