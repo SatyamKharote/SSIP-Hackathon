@@ -120,6 +120,18 @@ svg {
     padding: 10px;
 }
 
+.select-option {
+    padding: 15px;
+}
+
+.sel-label {
+    color: black;
+}
+
+.w-40 {
+    width: 60% !important;
+}
+
 @media screen and (min-width: 1080px) {
     .login-form {
         margin-top: 10px;
