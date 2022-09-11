@@ -85,8 +85,8 @@ svg {
     border-radius: 50%;
 }
 
-.main-content {
-    width: 97%;
+#main-content {
+    width: 97% !important;
     background-color: white;
     min-height: 800px;
     margin-top: 20px;
@@ -118,6 +118,18 @@ svg {
 .sub-header-text {
     margin: auto;
     padding: 10px;
+}
+
+.select-option {
+    padding: 15px;
+}
+
+.sel-label {
+    color: black;
+}
+
+.w-40 {
+    width: 30% !important;
 }
 
 @media screen and (min-width: 1080px) {
