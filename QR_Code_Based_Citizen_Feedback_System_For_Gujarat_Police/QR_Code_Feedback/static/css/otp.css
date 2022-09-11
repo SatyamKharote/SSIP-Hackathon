@@ -2,19 +2,21 @@
 
 /* BASIC */
 
-html {
-  /* background-color: #56baed; */
-}
-
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
-  background: url("gp2.jpg");
+  /* background-image: url("gp2.jpg"); */
 }
 
 .bg-image {
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden !important;
+  /* width: 100%; */
+  height: 100%;
+  background-image: url("gp2.jpg");
+  filter: blur(8px) !important;
+  -webkit-filter: blur(8px) !important;
+  background-repeat: no-repeat !important;
 }
 
 a {
@@ -37,6 +39,8 @@ h2 {
 /* STRUCTURE */
 
 .wrapper {
+  position: absolute;
+  top: 0 !important;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -138,14 +142,14 @@ input[type="reset"] {
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"]:focus {
-	background-color: #fff;
-	border: 2px solid #063d58;
-  }
+  background-color: #fff;
+  border: 2px solid #063d58;
+}
 
 input[type="button"]:hover,
 input[type="submit"]:hover,
@@ -206,6 +210,7 @@ input[type="tel"]:focus {
 input[type="tel"]:placeholder {
   color: #cccccc;
 }
+
 /* ANIMATIONS */
 
 /* Simple CSS3 Fade-in-down Animation */
@@ -224,6 +229,7 @@ input[type="tel"]:placeholder {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -237,6 +243,7 @@ input[type="tel"]:placeholder {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -249,22 +256,27 @@ input[type="tel"]:placeholder {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

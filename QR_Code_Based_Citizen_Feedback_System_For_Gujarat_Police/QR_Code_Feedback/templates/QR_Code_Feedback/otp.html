@@ -1,12 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enter OTP</title>
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter OTP</title>
+  <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
     />
@@ -14,47 +15,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
     /> -->
-    <link rel="stylesheet" type="text/css" href="{%static 'css/otp.css'%}" />
-  </head>
-  <body>
-    <div class="bg-image"></div>
-    <div class="wrapper fadeInDown">
-      <div id="formContent">
-        <!-- Tabs Titles -->
+  <link rel="stylesheet" type="text/css" href="{%static 'css/otp.css'%}" />
+</head>
 
-        <!-- Icon -->
-        <div class="fadeIn first">
-          <img
-            src="{% static 'images/gujarat-police-logo.png' %}"
-            id="icon"
-            alt="User Icon"
-          />
-        </div>
-        <h1 class="active">Thanks for visiting <span>Bhavnagar</span> police station</h1>
-        <!-- Login Form -->
-        <form>
-          <input
-            type="number"
-            id="login"
-            class="fadeIn second"
-            name="login"
-            placeholder="Enter OTP / OTP દાખલ કરો"
-            required
-          />
-          <!-- <input
-            type="tel"
-            id="telNo"
-            class="fadeIn third"
-            name="login"
-            placeholder="Mobile Number / મોબાઇલ નંબર"
-            maxlength="10"
-          /> -->
-          <input type="submit" class="fadeIn fourth" value="Submit" />
-          <input type="submit" class="fadeIn fourth" value="Resend" id="resend"/>
-        </form>
+<body>
+  <div class="bg-image"></div>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="{% static 'images/gujarat-police-logo.png' %}" id="icon" alt="User Icon" />
       </div>
+      <h1 class="active">Thanks for visiting <span>Bhavnagar</span> police station</h1>
+      <!-- Login Form -->
+      <form>
+        <input type="number" id="login" class="fadeIn second" name="login" placeholder="Enter OTP / OTP દાખલ કરો"
+          required />
+        <input type="submit" class="fadeIn fourth" value="Submit" />
+        <input type="submit" class="fadeIn fourth" value="Resend" id="resend" />
+      </form>
     </div>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </div>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script> -->
-  </body>
+</body>
+
 </html>

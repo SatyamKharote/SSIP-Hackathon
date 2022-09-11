@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
 /* BASIC */
-
-html {
-  /* background-color: #56baed; */
-}
-
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
@@ -165,6 +160,7 @@ input[type="tel"]:focus {
 input[type="tel"]:placeholder {
   color: #cccccc;
 }
+
 /* ANIMATIONS */
 
 /* Simple CSS3 Fade-in-down Animation */
@@ -183,6 +179,7 @@ input[type="tel"]:placeholder {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -196,6 +193,7 @@ input[type="tel"]:placeholder {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -208,22 +206,27 @@ input[type="tel"]:placeholder {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
