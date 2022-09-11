@@ -4,6 +4,6 @@ from QR_Code_Feedback import views
 
 urlpatterns = [
     path('', views.home),
-    path('login', views.login),
-    path('otp', views.otp),
+    path('login/',views.loginuser, name='loginuser'),
+    path('otp/', views.otp, name='otp'),
 ]
