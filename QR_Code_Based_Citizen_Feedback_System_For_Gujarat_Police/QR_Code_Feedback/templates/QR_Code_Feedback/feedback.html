@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
+    /> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{%static 'css/feedback.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+  />
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+  />
+
+    
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center">
+      <div class="card mt-5 pb-5">
+        <div
+          class="d-flex flex-row justify-content-between p-3 adiv text-white"
+        >
+          <i class="fas fa-chevron-left"></i>
+          <span class="pb-3">feedback</span>
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="mt-2 p-4 text-center">
+          <div id="panel" class="panel-container">
+            <div id="question-1">
+  <div class="question">
+    <h1>How was your overall experience?</h1>
+  </div>
+  <ul class="emoji-choices">
+    <li class="choice" data-value="5">
+      <p class="emoji"><i class="em em-heart_eyes"></i></p>
+      <p class="reaction">I can't wait to tell everyone I know about this!</p>
+    </li>
+    <li class="choice" data-value="4">
+      <p class="emoji"><i class="em em-smile"></i></p>
+      <p class="reaction">Thanks! I really enjoyed it.</p>
+    </li>
+    <li class="choice" data-value="3">
+      <p class="emoji"><i class="em em-neutral_face"></i></p>
+      <p class="reaction">Meh. I could take it or leave it</p>
+    </li>
+    <li class="choice" data-value="2">
+      <p class="emoji"><i class="em em-disappointed"></i></p>
+      <p class="reaction">I had such high hopes, but ultimately it was disappointing</p>
+    </li>
+    <li class="choice" data-value="1">
+      <p class="emoji"><i class="em em-angry"></i></p>
+      <p class="reaction">I can't believe I wasted money on this!</p>
+    </li>
+  </ul><a class="answer-submit button" href="#">Submit Answer</a>
+</div>
+<!-- Q2-->
+<div class="hide" id="question-2">
+  <div class="question">
+    <h1>How was our customer service?</h1>
+  </div>
+  <ul class="emoji-choices">
+    <li class="choice" data-value="5">
+      <p class="emoji"><i class="em em-heart_eyes"></i></p>
+      <p class="reaction">You had me at, "Hello."</p>
+    </li>
+    <li class="choice" data-value="4">
+      <p class="emoji"><i class="em em-smile"></i></p>
+      <p class="reaction">I felt like I was being well taken care of.</p>
+    </li>
+    <li class="choice" data-value="3">
+      <p class="emoji"><i class="em em-neutral_face"></i></p>
+      <p class="reaction">The agent was efficient and solved my problem (mostly).</p>
+    </li>
+    <li class="choice" data-value="2">
+      <p class="emoji"><i class="em em-disappointed"></i></p>
+      <p class="reaction">We eventually figured it out, but it took a lot longer than it should have.</p>
+    </li>
+    <li class="choice" data-value="1">
+      <p class="emoji"><i class="em em-angry"></i></p>
+      <p class="reaction">You need to hire a new agent. The experience was terrible.</p>
+    </li>
+  </ul><a class="answer-submit button" href="#">Submit Answer</a>
+</div>
+<!-- Q3-->
+<div class="hide" id="question-3">
+  <div class="question">
+    <h1>Was the product what you expected?</h1>
+  </div>
+  <ul class="emoji-choices">
+    <li class="choice" data-value="5">
+      <p class="emoji"><i class="em em-heart_eyes"></i></p>
+      <p class="reaction">It was so much better than I could have hoped!</p>
+    </li>
+    <li class="choice" data-value="4">
+      <p class="emoji"><i class="em em-smile"></i></p>
+      <p class="reaction">It met my expectations and more.</p>
+    </li>
+    <li class="choice" data-value="3">
+      <p class="emoji"><i class="em em-neutral_face"></i></p>
+      <p class="reaction">Solid. Exactly what I expected.</p>
+    </li>
+    <li class="choice" data-value="2">
+      <p class="emoji"><i class="em em-disappointed"></i></p>
+      <p class="reaction">It wasn't as awesome as I hoped. A little disappointed.</p>
+    </li>
+    <li class="choice" data-value="1">
+      <p class="emoji"><i class="em em-angry"></i></p>
+      <p class="reaction">Honestly, it's a piece of garbage.</p>
+    </li>
+  </ul><a class="answer-submit button" href="#">Submit Answer</a>
+  <!-- Thank you-->
+</div>
+<div class="summary hide">
+  <h2>Thanks for taking our survey! Your feedback helps us make better products.</h2>
+  <h3 class="hide" id="amazing">We are SO happy that you enjoyed your experience with our product! Please share it with everyone you know!</h3>
+  <h3 class="hide" id="good">It sounds like your experience with our product was pretty good. Thank you for using it and helping us to make it better. Please consider sharing it with your friends.</h3>
+  <h3 class="hide" id="okay">Thank you for trying out our product. We're always trying to get better. Your survey answers will help us better serve you in the future. We hope you'll consider sharing our product with others. </h3>
+  <h3 class="hide" id="disappointing">We're really bummed that your experience with our product wasn't what you though it would be. Thank you for sharing your experience with us. Your answers will help us a take a look at how we can improve our product.</h3>
+  <h3 class="hide" id="terrible">We're sorry that you had such a terrible experience with our product. As hard as it is to swallow a bitter pill, we appreciate your feedback and will look into how we can improve the areas you shared with us. We're always improving and hope you'll give our product another try in the future.</h3>
+</div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/feedback.js' %}"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script> -->
+  </body>
+</html>

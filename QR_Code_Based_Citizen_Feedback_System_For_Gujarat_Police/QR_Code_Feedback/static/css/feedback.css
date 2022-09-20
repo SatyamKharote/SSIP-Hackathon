@@ -1,0 +1,90 @@
+body {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+.button {
+  padding: 1rem;
+  color: white;
+  background: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 0 2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.emoji-choices {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .emoji-choices {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+  }
+}
+@media (min-width: 900px) {
+  .choice {
+    width: 20vw;
+    margin-top: 3rem;
+  }
+}
+.emoji {
+  font-size: 1.5rem;
+  transition: font-size 300ms ease;
+  cursor: pointer;
+  margin: 0;
+}
+
+.emoji-selected {
+  font-size: 2rem;
+}
+
+.reaction {
+  font-size: 1rem;
+  opacity: 0;
+}
+
+.reaction-fade-in {
+  -webkit-animation: fadeIn 300ms ease;
+          animation: fadeIn 300ms ease;
+  opacity: 1;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.question {
+  margin-top: 1rem;
+}
+
+.summary {
+  text-align: center;
+  margin: auto;
+  max-width: 800px;
+}
