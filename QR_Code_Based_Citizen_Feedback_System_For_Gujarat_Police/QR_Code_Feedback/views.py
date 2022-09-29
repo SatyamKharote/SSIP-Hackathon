@@ -15,5 +15,8 @@ def otp(request):
 def feedback(request):
     return render(request, 'QR_Code_Feedback/feedback.html')
 
+def thankyou(request):
+    return render(request, 'QR_Code_Feedback/thankyou.html')
+
 def home(request):
     return render(request, 'QR_Code_Feedback/home.html')

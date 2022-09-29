@@ -25,12 +25,14 @@
         <!-- Icon -->
         <div class="fadeIn first">
           <img
-            src="{% static 'images/gujarat-police-logo.png' %}"
+            src="{% static 'images/GUJARAT POLICE LOGO PNG.png' %}"
             id="icon"
             alt="User Icon"
           />
         </div>
-        <h1 class="active">Thanks for visiting <span id="city">Bhavnagar</span> police station</h1>
+        <h1 class="active">
+          Thanks for visiting <span id="city">Bhavnagar</span> police station
+        </h1>
         <!-- Login Form -->
         <form>
           <input
@@ -60,6 +62,13 @@
             maxlength="10"
             required
           />
+          <label for="language">Choose a language:</label>
+
+          <select name="language" id="language">
+            <option value="volvo">English</option>
+            <option value="saab">Gujarati</option>
+          </select>
+
           <input type="submit" class="fadeIn fourth" value="Submit" />
         </form>
       </div>
