@@ -2,19 +2,19 @@
 body {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  /* height: 100vh;
-  background-image: url("gp2.jpg");
-  overflow: hidden; */
+  height: 100vh;
+  background-image: url("gp2-01.jpeg");
+  /* overflow: hidden;  */
 }
-/* .bg-image {
-  overflow: hidden !important;
-  width: 100%;
+.bg-image {
+  /* overflow: hidden !important; */
+  /* width: 100%;
   height: 100%;
-  background-image: url("gp2.jpg");
-  filter: blur(8px) !important;
+  background-image: url("gp2-01.jpeg"); */
+  /* filter: blur(8px) !important;
   -webkit-filter: blur(8px) !important;
-  overflow: hidden;
-} */
+  overflow: hidden; */
+} 
 .card{
 	width: auto;
 	border: none;
