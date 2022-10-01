@@ -19,5 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('QR_Code_Feedback.urls')),
-    path('office/', include('office_view.urls'))
+    path('office/', include('office_view.urls')),
 ]
