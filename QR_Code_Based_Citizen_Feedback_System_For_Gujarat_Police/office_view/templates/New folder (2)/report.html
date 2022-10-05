@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="sub-header">
+    <h3 class="sub-header-text">Report</h3>
+</div>
+<div>
+    <form>
+        <div class="w-100" style="display:flex;flex-wrap: wrap; padding: 10px;">
+            <div style="width: 50%; display: flex;" class="select-option">
+                <div style="width: 40%;">
+                    <label class="sel-label"><b>Select Zone</b></label>
+                </div>
+                <div style="width: 80%;">
+                    <select class="form-control" style="width: 300px;">
+                        <option>Large select</option>
+                    </select>
+                </div>
+            </div>
+            <div style="width: 50%; display: flex;" class="select-option">
+                <div style="width: 40%;">
+                    <label class="sel-label"><b>Select Range</b></label>
+                </div>
+                <div style="width: 80%;">
+                    <select class="form-control" style="width: 300px;">
+                        <option>Large select</option>
+                    </select>
+                </div>
+            </div>
+            <div style="width: 50%; display: flex;" class="select-option">
+                <div style="width: 40%;">
+                    <label class="sel-label"><b>Select Destrict</b></label>
+                </div>
+                <div style="width: 80%;">
+                    <select class="form-control" style="width: 300px;">
+                        <option>Large select</option>
+                    </select>
+                </div>
+            </div>
+            <div style="width: 50%; display: flex;" class="select-option">
+                <div style="width: 40%;">
+                    <label class="sel-label"><b>Select Sub Division</b></label>
+                </div>
+                <div style="width: 80%;">
+                    <select class="form-control" style="width: 300px;">
+                        <option>Large select</option>
+                    </select>
+                </div>
+            </div>
+            <div style="width: 50%; display: flex;" class="select-option">
+                <div style="width: 40%;">
+                    <label class="sel-label"><b>Select Police Station</b></label>
+                </div>
+                <div style="width: 80%;">
+                    <select class="form-control" style="width: 300px;">
+                        <option>Large select</option>
+                    </select>
+                </div>
+            </div>
+            <div style="width: 50%; display: flex;" class="select-option">
+                <div style="width: 40%;">
+                    <label class="sel-label"><b>Select Police Post</b></label>
+                </div>
+                <div style="width: 80%;">
+                    <select class="form-control" style="width: 300px;">
+                        <option>Large select</option>
+                    </select>
+                </div>
+            </div>
+            <div style="width: 50%; display: flex;" class="select-option">
+                <div style="width: 40%;">
+                    <label class="sel-label"><b>Select Month</b></label>
+                </div>
+                <div style="width: 80%;">
+                    <select class="form-control" style="width: 300px;">
+                        <option>Large select</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="display:flex;">
+            <div style="width: 100%; display: flex;" class="select-option">
+                <div style="width: 20%; margin-left: 10px;">
+                    <label class="sel-label"><b>Select By Date</b></label>
+                </div>
+                <div style="width: 80%; display: flex;">
+                    <div style="margin-right:10px;">
+                        <input type="date" class="form-control">
+                    </div>
+                    <div>
+                        <input type="date" class="form-control" style="margin-right:0px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="display:flex;">
+            <div style="width: 100%; display: flex; color: black;" class="select-option">
+                <div style="width: 20%; margin-left: 10px;">
+                    <label class="sel-label"><b>Search By</b></label>
+                </div>
+                <div style="width: 80%; display: flex;">
+                    <div>
+                        <label>Name: </label>
+                        <input type="radio" value="name">
+                    </div>
+                    <div>
+                        <label>Number: </label>
+                        <input type="radio" value="number" style="margin-right:0px;">
+                    </div>
+                    <div>
+                        <input type="text" value="" style="margin-right:0px;" placeholder="Search...">
+                    </div>
+                    <button class="btn btn-primary w-25" style="margin-left:10px;">Search</button>
+                    <button class="btn btn-danger w-25" style="margin-left: 10px;">Reset</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,122 +1,121 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<div class="sub-header">
-    <h3 class="sub-header-text">Report</h3>
-</div>
-<div>
-    <form>
-        <div class="w-100" style="display:flex;flex-wrap: wrap; padding: 10px;">
-            <div style="width: 50%; display: flex;" class="select-option">
-                <div style="width: 40%;">
-                    <label class="sel-label"><b>Select Zone</b></label>
-                </div>
-                <div style="width: 80%;">
-                    <select class="form-control" style="width: 300px;">
-                        <option>Large select</option>
-                    </select>
-                </div>
+{% block content %} 
+<aside class="main-sidebar hidden-print ">
+         <section class="sidebar" id="sidebar-scroll">
+            <!-- Sidebar Menu-->
+            <ul class="sidebar-menu">
+                <li class="active treeview">
+                    <a class="waves-effect" id="home" style="background-color: gray;" id="change_password"  href="app">
+                        <i class="icon-speedometer"></i><span> Dashboard</span>
+                    </a>                
+                </li> 
+                <li class="active treeview">
+                  <a class="waves-effect" id="report" href="report">
+                      <i class="icon-list"></i><span> Report</span>
+                  </a>                
+               </li> 
+               <li class="active treeview">
+                  <a class="waves-effect" id="qr_code" style="background-color: gray;"  href="qr_code">
+                     <i class="icon-event"></i><span> Generate QR Code</span>
+                  </a>                
+               </li>     
+               <li class="active treeview">
+                  <a class="waves-effect" id="create_user" style="background-color: gray;"  href="create-user">
+                     <i class="icon-user"></i><span> Create User</span>
+                  </a>                
+               </li> 
+               <li class="active treeview">
+                  <a class="waves-effect"  style="background-color: gray;"   href="change-password">
+                     <i class="icon-key"></i><span> Change Password</span>
+                  </a>                
+               </li>        
+            </ul> 
+         </section>
+      </aside>
+<div class="content-wrapper">
+         <!-- Container-fluid starts -->
+         <!-- Main content starts -->
+         <div class="container-fluid">
+            <div class="row">
+               <div class="main-header">
+                  <h4>Dashboard</h4>
+               </div>
+            </div> 
+            <!-- 1-3-block row start -->
+            <div class="row"> 
+               <div class="col-sm-12" style="background-color: gainsboro; height: auto;"> 
+                  <div class="col-sm-6"> 
+                     <div class="d-flex p-10"> 
+                           <label class="form-label">Select Zone</label>
+                           <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                              <option>Select</option>
+                           </select>
+                     </div>   
+                     <div class="d-flex p-10"> 
+                        <label class="form-label">Select Range</label>
+                        <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                           <option>Select</option>
+                        </select>
+                     </div> 
+                     <div class="d-flex p-10"> 
+                     <label class="form-label">Select Destrict</label>
+                     <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                        <option>Select</option>
+                     </select> 
+                     </div> 
+                     <div class="d-flex p-10"> 
+                        <label class="form-label">Select Month</label>
+                        <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                           <option>Select</option>
+                        </select> 
+                        </div> 
+                     
+                  </div> 
+                  <div class="col-sm-6">
+                     <div class="d-flex p-10"> 
+                        <label class="form-label">Select Sub Division</label>
+                        <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                           <option>Select</option>
+                        </select>
+                  </div> 
+                  <div class="d-flex p-10"> 
+                     <label class="form-label">Select Police Station</label>
+                     <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                        <option>Select</option>
+                     </select>
+               </div> 
+               <div class="d-flex p-10"> 
+                  <label class="form-label">Select Police Post</label>
+                  <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                     <option>Select</option>
+                  </select>
+               </div> 
+               <div class="d-flex p-10"> 
+                  <label class="form-label">Search By</label>
+                  <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
+                     <option>Name</option> 
+                     <option>Number</option>
+                  </select>
+               </div>
+                  </div> 
+                  <br>
+                  <br>
+               </div> 
+               <div class="d-flex p-10" style="text-align: center !important;"> 
+                  <label class="form-label">Select By Date</label> 
+                  &nbsp; &nbsp;
+                  <input type="date" class="form-control" style="width: 25%; position: relative;"> 
+                  <input type="date" class="form-control" style="width: 25%; position: relative;">  
+                  <div style="margin-left:10px">
+                     <button class="btn btn-primary" style="width: 200px" type="submit">Search</button> 
+                     <button class="btn btn-danger" style="width: 200px;" type="reset">Reset</button>
+                  </div>
+               </div>  
             </div>
-            <div style="width: 50%; display: flex;" class="select-option">
-                <div style="width: 40%;">
-                    <label class="sel-label"><b>Select Range</b></label>
-                </div>
-                <div style="width: 80%;">
-                    <select class="form-control" style="width: 300px;">
-                        <option>Large select</option>
-                    </select>
-                </div>
-            </div>
-            <div style="width: 50%; display: flex;" class="select-option">
-                <div style="width: 40%;">
-                    <label class="sel-label"><b>Select Destrict</b></label>
-                </div>
-                <div style="width: 80%;">
-                    <select class="form-control" style="width: 300px;">
-                        <option>Large select</option>
-                    </select>
-                </div>
-            </div>
-            <div style="width: 50%; display: flex;" class="select-option">
-                <div style="width: 40%;">
-                    <label class="sel-label"><b>Select Sub Division</b></label>
-                </div>
-                <div style="width: 80%;">
-                    <select class="form-control" style="width: 300px;">
-                        <option>Large select</option>
-                    </select>
-                </div>
-            </div>
-            <div style="width: 50%; display: flex;" class="select-option">
-                <div style="width: 40%;">
-                    <label class="sel-label"><b>Select Police Station</b></label>
-                </div>
-                <div style="width: 80%;">
-                    <select class="form-control" style="width: 300px;">
-                        <option>Large select</option>
-                    </select>
-                </div>
-            </div>
-            <div style="width: 50%; display: flex;" class="select-option">
-                <div style="width: 40%;">
-                    <label class="sel-label"><b>Select Police Post</b></label>
-                </div>
-                <div style="width: 80%;">
-                    <select class="form-control" style="width: 300px;">
-                        <option>Large select</option>
-                    </select>
-                </div>
-            </div>
-            <div style="width: 50%; display: flex;" class="select-option">
-                <div style="width: 40%;">
-                    <label class="sel-label"><b>Select Month</b></label>
-                </div>
-                <div style="width: 80%;">
-                    <select class="form-control" style="width: 300px;">
-                        <option>Large select</option>
-                    </select>
-                </div>
-            </div>
-
-        </div>
-        <div class="display:flex;">
-            <div style="width: 100%; display: flex;" class="select-option">
-                <div style="width: 20%; margin-left: 10px;">
-                    <label class="sel-label"><b>Select By Date</b></label>
-                </div>
-                <div style="width: 80%; display: flex;">
-                    <div style="margin-right:10px;">
-                        <input type="date" class="form-control">
-                    </div>
-                    <div>
-                        <input type="date" class="form-control" style="margin-right:0px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="display:flex;">
-            <div style="width: 100%; display: flex; color: black;" class="select-option">
-                <div style="width: 20%; margin-left: 10px;">
-                    <label class="sel-label"><b>Search By</b></label>
-                </div>
-                <div style="width: 80%; display: flex;">
-                    <div>
-                        <label>Name: </label>
-                        <input type="radio" value="name">
-                    </div>
-                    <div>
-                        <label>Number: </label>
-                        <input type="radio" value="number" style="margin-right:0px;">
-                    </div>
-                    <div>
-                        <input type="text" value="" style="margin-right:0px;" placeholder="Search...">
-                    </div>
-                    <button class="btn btn-primary w-25" style="margin-left:10px;">Search</button>
-                    <button class="btn btn-danger w-25" style="margin-left: 10px;">Reset</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+            <!-- 1-3-block row end --> 
+         </div> 
+      </div>
+   </div>
 {% endblock %}

@@ -1,13 +1,12 @@
 from django.shortcuts import render
 
-
 # Create your views here.
 
 def loginadmin(request):
     return render(request, 'loginadmin.html')
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'dashboard.html')
 
 # dashboard
 def dashboard(request):
