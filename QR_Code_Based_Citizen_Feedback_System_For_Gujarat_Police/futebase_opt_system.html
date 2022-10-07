@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script> 
+
+var subjectObject = {
+  "Central_Gujarat": {
+    "Ahmedabad":["Division A","Division B","Division C","Division D"],
+    "Vadodara": ["Division A","Division B","Division C","Division D"],
+    "Anand":["Division A","Division B","Division C","Division D"], 
+    "Chhota":["Division A","Division B","Division C","Division D"], 
+    "Dahod": ["Division A","Division B","Division C","Division D"], 
+    "Kheda": ["Division A","Division B","Division C","Division D"], 
+    "Mahisagar": ["Division A","Division B","Division C","Division D"], 
+    "Panchmahal":["Division A","Division B","Division C","Division D"], 
+  },
+  "North_Gujarat": {
+    "Gandhinagar": ["Variables", "Strings", "Arrays"],
+    "Aravalli": ["SELECT", "UPDATE", "DELETE"], 
+    "Banaskantha": ["SELECT", "UPDATE", "DELETE"], 
+    "Mehsana": ["SELECT", "UPDATE", "DELETE"], 
+    "Patan": ["SELECT", "UPDATE", "DELETE"], 
+    "Sabarkantha": ["SELECT", "UPDATE", "DELETE"], 
+  }, 
+   "Saurashtra_Kutch": {
+    "Rajkot": ["Variables", "Strings", "Arrays"],
+    "Amreli": ["SELECT", "UPDATE", "DELETE"], 
+    "Bhavnagar": ["SELECT", "UPDATE", "DELETE"],
+    "Botad": ["SELECT", "UPDATE", "DELETE"],
+    "Devbhoomi Dwarka": ["SELECT", "UPDATE", "DELETE"],
+    "Gir Somnath": ["SELECT", "UPDATE", "DELETE"],
+    "Jamnagar": ["SELECT", "UPDATE", "DELETE"],
+    "Junagadh": ["SELECT", "UPDATE", "DELETE"],  
+    "Morbi": ["SELECT", "UPDATE", "DELETE"], 
+    "Porbandar": ["SELECT", "UPDATE", "DELETE"], 
+    "Surendranagar": ["SELECT", "UPDATE", "DELETE"], 
+    "Kachchh": ["SELECT", "UPDATE", "DELETE"],  
+
+  }, 
+   "South_Gujarat": {
+    "Surat":[{
+        "Division A":['Varachha Police Station','Kapodra Police Station','Sarthana Police Station'],
+    }],
+    "Bharuch": ["SELECT", "UPDATE", "DELETE"], 
+    "Dang": ["SELECT", "UPDATE", "DELETE"],
+    "Narmada": ["SELECT", "UPDATE", "DELETE"],
+    "Narmada": ["SELECT", "UPDATE", "DELETE"],
+    "Navsari": ["SELECT", "UPDATE", "DELETE"],
+    "Tapi": ["SELECT", "UPDATE", "DELETE"],
+    "Valsad": ["SELECT", "UPDATE", "DELETE"], 
+  },
+  
+}
+window.onload = function() { 
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  var policeSel = document.getElementById('police');
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    policeSel = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    policeSel = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {  
+        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]); 
+      }
+    }
+     policeSel.onchange = function() {
+    //empty Chapters dropdown
+    //display correct values
+    var p = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < p.length; i++) {  
+        chapterSel.options[chapterSel.options.length] = new Option(p[i], p[i]); 
+      }
+    }
+    
+  }
+  
+</script>
+</head>   
+<body>
+
+<h1>Cascading Dropdown Example</h1>
+
+<form name="form1" id="form1" action="/action_page.php">
+Select Zone: <select name="subject" id="subject">
+    <option value="" selected="selected">Select zone</option>
+  </select>
+  <br><br>
+Select District: <select name="topic" id="topic">
+    <option value="" selected="selected">Please select district first</option>
+  </select>
+  <br><br>
+Select Division: <select name="chapter" id="chapter">
+    <option value="" selected="selected">Please select division first</option>
+  </select>
+  <br><br> 
+  
+  <br><br>
+  <input type="submit" value="Submit">  
+</form>
+
+</body>
+</html>

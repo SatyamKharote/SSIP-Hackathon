@@ -34,70 +34,253 @@
             </ul> 
          </section>
       </aside>
-<div class="content-wrapper">
+
+      <div class="content-wrapper">
          <!-- Container-fluid starts -->
          <!-- Main content starts -->
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-                  <h4>Dashboard</h4>
+                  <h4>Generate QR Code</h4>
                </div>
             </div> 
             <!-- 1-3-block row start -->
             <div class="row"> 
                <div class="col-sm-12" style="background-color: gainsboro; height: auto;"> 
-                  <div class="col-sm-6"> 
-                     <div class="d-flex p-10"> 
-                           <label class="form-label">Select Zone</label>
-                           <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
-                              <option>Select</option>
-                           </select>
-                     </div>   
-                     <div class="d-flex p-10"> 
-                        <label class="form-label">Select Range</label>
-                        <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
-                           <option>Select</option>
-                        </select>
-                     </div> 
-                     <div class="d-flex p-10"> 
-                     <label class="form-label">Select Destrict</label>
-                     <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
-                        <option>Select</option>
-                     </select> 
-                     </div> 
-                     
-                  </div> 
-                  <div class="col-sm-6">
-                     <div class="d-flex p-10"> 
-                        <label class="form-label">Select Sub Division</label>
-                        <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
-                           <option>Select</option>
-                        </select>
-                  </div> 
-                  <div class="d-flex p-10"> 
-                     <label class="form-label">Select Police Station</label>
-                     <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
-                        <option>Select</option>
-                     </select>
-               </div> 
-               <div class="d-flex p-10"> 
-                  <label class="form-label">Select Police Post</label>
-                  <select class="form-control" style="width: 70%; position: absolute; right:0;"> 
-                     <option>Select</option>
+                   <div class="col-sm-6"> 
+                  <form method="POST">{% csrf_token %}
+                  Select Zone: <select name="subject" id="subject" class="form-control" style="width: 70%; position: absolute; right:0;">
+                     <option value="" selected="selected">Select zone</option>
                   </select>
-               </div>
-                  </div> 
-                  <br>
-                  <br>
-               </div> 
-               <div class="d-flex p-10" style="text-align: center !important; float: right;">  
+                  <br><br>
+                  Select District: <select name="topic" id="topic" class="form-control" style="width: 70%; position: absolute; right:0;">
+                     <option value="" selected="selected">Please select district first</option>
+                  </select>
+                  <br><br>
+                  Select Division: <select data-live-search="true"  name="chapter" id="chapter" class="form-control selectpicker" style="width: 70%; position: absolute; right:0;">
+                     <option value="" selected="selected">Please select division first</option>
+                  </select>
+                  <br><br> 
+                  
+                  <br><br>
+                  <div class="d-flex p-10" style="text-align: center !important; float: right;">  
                   <div style="margin-left:10px">
-                     <button class="btn btn-primary" style="width: 200px" type="submit">Generate QR Code</button> 
+                     <button class="btn btn-primary" id="p" style="width: 200px" type="submit" value="Generate QR Code">Code</button>
                   </div>
+               </div>  
+                  </div> 
+                  </div> 
+                </div> 
+                  <br>
+                  <br> 
+                  </form>
                </div> 
+                
             </div>
             <!-- 1-3-block row end --> 
          </div> 
       </div>
-   </div>
+   </div> 
+   
+<div class="content-wrapper"> 
+        <div class="container-fluid">
+    <div class="text-center">
+  
+      <!-- Get a Placeholder image initially,
+       this will change according to the
+       data entered later -->
+      <img src=
+"https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+        class="qr-code img-thumbnail img-responsive" />
+    </div>
+  
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2"
+          for="content">
+          Content:
+        </label>
+        <div class="col-sm-10">
+  
+          <!-- Input box to enter the 
+              required data -->
+          <input type="text" size="60" 
+            maxlength="60" class="form-control"
+            id="content" placeholder="Enter content" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+  
+          <!-- Button to generate QR Code for 
+           the entered data -->
+          <button type="button" class=
+            "btn btn-default" id="generate">
+            Generate
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <script src=
+    "https://code.jquery.com/jquery-3.5.1.js">
+  </script>
+  
+  <script> 
+//   $(document).ready(function(){
+//    $("#p").click(function(){
+//       val1=$('#subject').val(); 
+//       val2=$('#topic').val(); 
+//       val3=$('#chapter').val(); 
+//       console.log(val1, val2, val3);  
+
+// });
+//   }); 
+    // Function to HTML encode the text
+    // This creates a new hidden element,
+    // inserts the given text into it 
+    // and outputs it out as HTML
+    function htmlEncode(value) {
+      return $('<div/>').text(value)
+        .html();
+    }
+  
+    $(function () {
+  
+      // Specify an onclick function
+      // for the generate button
+      $('#generate').click(function () {
+  
+        // Generate the link that would be
+        // used to generate the QR Code
+        // with the given data 
+        let finalURL =
+'https://chart.googleapis.com/chart?cht=qr&chl=' +
+          htmlEncode($('#content').val()) +
+          '&chs=160x160&chld=L|0'
+  
+        // Replace the src of the image with
+        // the QR code image
+        $('.qr-code').attr('src', finalURL);
+      });
+    });
+  </script> 
+  <script language="javascript" type="text/javascript">
+    var subjectObject = {
+  "Central_Gujarat": {
+    "Ahmedabad":["Division A","Division B","Division C","Division D"],
+    "Vadodara": ["Division A","Division B","Division C","Division D"],
+    "Anand":["Division A","Division B","Division C","Division D"], 
+    "Chhota":["Division A","Division B","Division C","Division D"], 
+    "Dahod": ["Division A","Division B","Division C","Division D"], 
+    "Kheda": ["Division A","Division B","Division C","Division D"], 
+    "Mahisagar": ["Division A","Division B","Division C","Division D"], 
+    "Panchmahal":["Division A","Division B","Division C","Division D"], 
+  },
+  "North_Gujarat": {
+    "Gandhinagar": ["Variables", "Strings", "Arrays"],
+    "Aravalli": ["SELECT", "UPDATE", "DELETE"], 
+    "Banaskantha": ["SELECT", "UPDATE", "DELETE"], 
+    "Mehsana": ["SELECT", "UPDATE", "DELETE"], 
+    "Patan": ["SELECT", "UPDATE", "DELETE"], 
+    "Sabarkantha": ["SELECT", "UPDATE", "DELETE"], 
+  }, 
+   "Saurashtra_Kutch": {
+    "Rajkot": ["Variables", "Strings", "Arrays"],
+    "Amreli": ["SELECT", "UPDATE", "DELETE"], 
+    "Bhavnagar": ["SELECT", "UPDATE", "DELETE"],
+    "Botad": ["SELECT", "UPDATE", "DELETE"],
+    "Devbhoomi Dwarka": ["SELECT", "UPDATE", "DELETE"],
+    "Gir Somnath": ["SELECT", "UPDATE", "DELETE"],
+    "Jamnagar": ["SELECT", "UPDATE", "DELETE"],
+    "Junagadh": ["SELECT", "UPDATE", "DELETE"],  
+    "Morbi": ["SELECT", "UPDATE", "DELETE"], 
+    "Porbandar": ["SELECT", "UPDATE", "DELETE"], 
+    "Surendranagar": ["SELECT", "UPDATE", "DELETE"], 
+    "Kachchh": ["SELECT", "UPDATE", "DELETE"],  
+
+  }, 
+   "South_Gujarat": {
+    "Surat":[{
+        "Division A":['Varachha Police Station','Kapodra Police Station','Sarthana Police Station'],
+    }],
+    "Bharuch": ["SELECT", "UPDATE", "DELETE"], 
+    "Dang": ["SELECT", "UPDATE", "DELETE"],
+    "Narmada": ["SELECT", "UPDATE", "DELETE"],
+    "Narmada": ["SELECT", "UPDATE", "DELETE"],
+    "Navsari": ["SELECT", "UPDATE", "DELETE"],
+    "Tapi": ["SELECT", "UPDATE", "DELETE"],
+    "Valsad": ["SELECT", "UPDATE", "DELETE"], 
+  },
+  
+}
+window.onload = function() { 
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  var policeSel = document.getElementById('police');
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    policeSel = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    policeSel = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {  
+        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]); 
+      }
+    } 
+  } 
+    </script> 
+
+
+
+
+<script type="text/javascript"> 
+$(document).ready(function(){ 
+   $("#p").click(function(){ 
+      val1=$('#subject').val(); 
+      // debugger  
+      val2=$('#topic').val(); 
+      val3=$('#chapter').val(); 
+      console.log(val1, val2, val3);
+    $.ajax(
+    {
+        type:"GET",
+        url: "{% url 'qr_generating_form' %}",
+      //   data:{
+      //            val1: val1, 
+      //            val2:val2, 
+      //            val3:val3, 
+      //   }, 
+        data:{"text1": val1,"text2":val2, "text3":val3, 'X-CSRFToken': '{{csrf_token}}' }, 
+
+        success: function( data ) 
+        {
+            alert("Success"); 
+        }, 
+        error: function (data) {
+                alert("Error");
+            },  
+
+}); 
+
+});
+  });
+</script>
+      </div>
+   </div> 
+   
 {% endblock %}
