@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 
 def phone_number_verify(request):
@@ -16,6 +17,8 @@ def index(request):
 def dashboard(request):
     return render(request, 'dashboard.html') 
 
+def add_question(request):
+    return render(request, 'add_question.html')
 
 def report(request):
     return render(request, 'report.html')   
