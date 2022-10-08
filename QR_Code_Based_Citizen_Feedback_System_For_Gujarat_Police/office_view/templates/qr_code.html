@@ -48,14 +48,14 @@
             <div class="row"> 
                <div class="col-sm-12" style="background-color: gainsboro; height: auto;"> 
                    <div class="col-sm-6"> 
-                  <form method="POST">{% csrf_token %}
+                  <form method="GET">  
                   Select Zone: <select name="subject" id="subject" class="form-control" style="width: 70%; position: absolute; right:0;">
                      <option value="" selected="selected">Select zone</option>
                   </select>
                   <br><br>
                   Select District: <select name="topic" id="topic" class="form-control" style="width: 70%; position: absolute; right:0;">
                      <option value="" selected="selected">Please select district first</option>
-                  </select>
+                  </select> 
                   <br><br>
                   Select Division: <select data-live-search="true"  name="chapter" id="chapter" class="form-control selectpicker" style="width: 70%; position: absolute; right:0;">
                      <option value="" selected="selected">Please select division first</option>
@@ -65,7 +65,7 @@
                   <br><br>
                   <div class="d-flex p-10" style="text-align: center !important; float: right;">  
                   <div style="margin-left:10px">
-                     <button class="btn btn-primary" id="p" style="width: 200px" type="submit" value="Generate QR Code">Code</button>
+                     <input class="btn btn-primary" id="p" style="width: 200px" type="submit" value="Generate QR Code">
                   </div>
                </div>  
                   </div> 
@@ -140,30 +140,7 @@
     // This creates a new hidden element,
     // inserts the given text into it 
     // and outputs it out as HTML
-    function htmlEncode(value) {
-      return $('<div/>').text(value)
-        .html();
-    }
-  
-    $(function () {
-  
-      // Specify an onclick function
-      // for the generate button
-      $('#generate').click(function () {
-  
-        // Generate the link that would be
-        // used to generate the QR Code
-        // with the given data 
-        let finalURL =
-'https://chart.googleapis.com/chart?cht=qr&chl=' +
-          htmlEncode($('#content').val()) +
-          '&chs=160x160&chld=L|0'
-  
-        // Replace the src of the image with
-        // the QR code image
-        $('.qr-code').attr('src', finalURL);
-      });
-    });
+    
   </script> 
   <script language="javascript" type="text/javascript">
     var subjectObject = {
@@ -218,7 +195,7 @@ window.onload = function() {
   var subjectSel = document.getElementById("subject");
   var topicSel = document.getElementById("topic");
   var chapterSel = document.getElementById("chapter");
-  var policeSel = document.getElementById('police');
+  var policeSel = document.getElementById('police'); 
   for (var x in subjectObject) {
     subjectSel.options[subjectSel.options.length] = new Option(x, x);
   }
@@ -252,33 +229,56 @@ window.onload = function() {
 $(document).ready(function(){ 
    $("#p").click(function(){ 
       val1=$('#subject').val(); 
-      // debugger  
       val2=$('#topic').val(); 
       val3=$('#chapter').val(); 
-      console.log(val1, val2, val3);
-    $.ajax(
+      console.log(val1, val2, val3); 
+      
+    $.ajax( 
     {
         type:"GET",
-        url: "{% url 'qr_generating_form' %}",
-      //   data:{
-      //            val1: val1, 
-      //            val2:val2, 
-      //            val3:val3, 
-      //   }, 
+        url: "{% url 'qr_generating_form' %}",  
         data:{"text1": val1,"text2":val2, "text3":val3, 'X-CSRFToken': '{{csrf_token}}' }, 
-
         success: function( data ) 
         {
-            alert("Success"); 
+        //  alert("success");    
+         sessionStorage.setItem('label1', val1), 
+      sessionStorage.setItem('label2', val2), 
+      sessionStorage.setItem('label3', val3) 
         }, 
         error: function (data) {
-                alert("Error");
+               console.log("Error");
             },  
 
 }); 
-
+feedback_form_link='http://127.0.0.1:8000/feedback/?subject='+val1+'&'+'topic'+'='+val2+'&'+'chapter'+'='+val3 
+alert(feedback_form_link) 
 });
-  });
+  }); 
+  function htmlEncode(value) {
+      return $('<div/>').text(value)
+        .html();
+    }
+  
+    $(function () {
+  
+      // Specify an onclick function
+      // for the generate button
+      $('#generate').click(function () {
+  
+        // Generate the link that would be
+        // used to generate the QR Code
+        // with the given data 
+        let finalURL =
+'https://chart.googleapis.com/chart?cht=qr&chl=' +
+          htmlEncode($('#content').val()) +
+          '&chs=160x160&chld=L|0'
+  
+        // Replace the src of the image with
+        // the QR code image
+        $('.qr-code').attr('src', finalURL);
+      });
+    }); 
+
 </script>
       </div>
    </div> 

@@ -45,10 +45,11 @@
   />
 
   <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet"> 
+  <script>console.log(sessionStorage.getItem('label1'));</script>
   </head>
   <body>
     <div class="bg-image"></div>
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center" style="width:400px;">
       <div class="card mt-5 pb-5">
         <div class="d-flex flex-row justify-content-between p-3 adiv text-white">
           <i class="fas fa-chevron-left"></i>
@@ -56,104 +57,38 @@
           <i class="fas fa-times"></i>
         </div>
         <div class="mt-2 p-4 text-center">
-          <div id="panel" class="panel-container">
-            <div id="question-1">
-              <div class="question">
-                <h2> How did you come to the police station?</h2>
-              </div>
-              <ul class="emoji-choices">
-                <li class="choice" data-value="5">
-                  <p class="emoji"><i class="em em-heart_eyes"></i></p>
-                  <p class="reaction">On your own</p>
-                </li>
-                <li class="choice" data-value="4">
-                  <p class="emoji"><i class="em em-smile"></i></p>
-                  <p class="reaction">With a neighbour/ local leader</p>
-                </li>
-                <li class="choice" data-value="3">
-                  <p class="emoji"><i class="em em-neutral_face"></i></p>
-                  <p class="reaction">Through a person known to a police officer</p>
-                </li>
-               <!-- <li class="choice" data-value="2">
-                  <p class="emoji"><i class="em em-disappointed"></i></p>
-                  <p class="reaction">I had such high hopes, but ultimately it was disappointing</p>
-                </li>
-                <li class="choice" data-value="1">
-                  <p class="emoji"><i class="em em-angry"></i></p>
-                  <p class="reaction">I can't believe I wasted money on this!</p>
-                </li>  -->
-              <!-- </ul><a class="answer-submit button" href="#">Submit Answer</a>  -->
-            </div>
-            <!-- Q2-->
-            <div class="hide" id="question-2">
-              <div class="question">
-                <h2>After how much time you were heard in PS</h2>
-              </div>
-              <ul class="emoji-choices">
-                <li class="choice" data-value="5">
-                  <p class="emoji"><i class="em em-heart_eyes"></i></p>
-                  <p class="reaction">Immediately </p>
-                </li>
-                <li class="choice" data-value="4">
-                  <p class="emoji"><i class="em em-smile"></i></p>
-                  <p class="reaction">5 minutes</p>
-                </li>
-                <li class="choice" data-value="3">
-                  <p class="emoji"><i class="em em-neutral_face"></i></p>
-                  <p class="reaction">10 minutes</p>
-                </li>
-                <li class="choice" data-value="2">
-                  <p class="emoji"><i class="em em-disappointed"></i></p>
-                  <p class="reaction">15 minutes</p>
-                </li>
-                <li class="choice" data-value="1">
-                  <p class="emoji"><i class="em em-angry"></i></p>
-                  <p class="reaction">More than 15 minutes</p>
-                </li>
-              <!-- </ul><a class="answer-submit button" href="#">Submit Answer</a>  -->
-            </div>
-            <!-- Q3-->
-            <div class="question">
-              <h2>How would you describe your experience with police officers in the police station?</h2>
-              <div class="hide" id="question-3">
-              
-                <ul class="emoji-choices">
-                  <li class="choice" data-value="5">
-                    <p class="emoji"><i class="em em-heart_eyes"></i></p>
-                    <p class="reaction">Extremely satisfied</p>
-                  </li>
-                  <li class="choice" data-value="4">
-                    <p class="emoji"><i class="em em-smile"></i></p>
-                    <p class="reaction">satisfied</p>
-                  </li>
-                  <li class="choice" data-value="3">
-                    <p class="emoji"><i class="em em-neutral_face"></i></p>
-                    <p class="reaction">Partly satisfied</p>
-                  </li>
-                  <li class="choice" data-value="2">
-                    <p class="emoji"><i class="em em-disappointed"></i></p>
-                    <p class="reaction">Dissatisfied</p>
-                  </li>
-                  <li class="choice" data-value="1">
-                    <p class="emoji"><i class="em em-angry"></i></p>
-                    <p class="reaction">Extremely Dissatisfied</p>
-                  </li>
-                </ul>  
-                <!-- Thank you-->
-              </div> 
-            </div>
-            
-            <input type="submit" class="" value="Submit" />
-            <div class="summary hide">
-              <!-- <h2>Thanks for taking our survey! Your feedback helps us make better products.</h2>
-              <h3 class="hide" id="amazing">We are SO happy that you enjoyed your experience with our product! Please share it with everyone you know!</h3>
-              <h3 class="hide" id="good">It sounds like your experience with our product was pretty good. Thank you for using it and helping us to make it better. Please consider sharing it with your friends.</h3>
-              <h3 class="hide" id="okay">Thank you for trying out our product. We're always trying to get better. Your survey answers will help us better serve you in the future. We hope you'll consider sharing our product with others. </h3>
-              <h3 class="hide" id="disappointing">We're really bummed that your experience with our product wasn't what you though it would be. Thank you for sharing your experience with us. Your answers will help us a take a look at how we can improve our product.</h3>
-              <h3 class="hide" id="terrible">We're sorry that you had such a terrible experience with our product. As hard as it is to swallow a bitter pill, we appreciate your feedback and will look into how we can improve the areas you shared with us. We're always improving and hope you'll give our product another try in the future.</h3> -->
-            </div>
-          </div>
-          </div>
+          <h5 class="q">How did you fill in police station?</h5> 
+          <div style="display:flex; padding: 10px;">
+          <div><b>Bad:</b><input type="radio" value="Bad" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>Good:</b><input type="radio" value="Good" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>Best:</b><input type="radio" value="Best" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>batter:</b><input type="radio" value="batter" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>None:</b><input type="radio" value="None" class="form-control"></div> 
+         </div> 
+         <hr> 
+         <h5 class="q">How would you describe your experience with police officers in the police station?</h5> 
+          <div style="display:flex; padding: 10px;">
+          <div><b>Bad:</b><input type="radio" value="Bad" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>Good:</b><input type="radio" value="Good" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>Best:</b><input type="radio" value="Best" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>batter:</b><input type="radio" value="batter" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>None:</b><input type="radio" value="None" class="form-control"></div> 
+         </div> 
+         <hr>
+         <h5 class="q">Plice man behaviour?</h5> 
+          <div style="display:flex; padding: 10px;">
+          <div><b>Bad:</b><input type="radio" value="Bad" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>Good:</b><input type="radio" value="Good"" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>Best:</b><input type="radio" value="Best"" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>batter:</b><input type="radio" valuevalue="batter" class="form-control"></div> 
+          <div style="margin-left:20px;"><b>None:</b><input type="radio" value="None"" class="form-control"></div> 
+         </div>
+         <hr> 
+         <br>
+         <h5 class="q">Enter Your Remarks</h5> 
+         <textarea name="remark" id="remarkId" cols="40" rows="5"></textarea> 
+         <button type="submit" class="btn btn-primary">Submit Your Review</button>
+        </div>
         </div>
       </div>
     </div>
