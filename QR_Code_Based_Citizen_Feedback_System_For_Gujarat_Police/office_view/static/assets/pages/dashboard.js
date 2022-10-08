@@ -55,7 +55,7 @@ function dashboard(){
           text: 'Combination chart'
       },
       xAxis: {
-          categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+          categories: ['Bad', 'Goog', 'Best', 'better', 'none']
       },
       labels: {
           items: [{
@@ -69,17 +69,24 @@ function dashboard(){
       },
       series: [{
           type: 'column',
-          name: 'Jane',
+          name: 'Bad',
           data: [3, 2, 1, 3, 4],
           color:'#f57c00'
       }, {
           type: 'column',
-          name: 'John',
+          name: 'Good',
+          data: [4, 3, 5, 7, 6],
+          color:'red'
+          },
+          {
+          type: 'column',
+          name: 'Best',
           data: [4, 3, 5, 7, 6],
           color:'#2BBBAD'
-      }, {
+      },
+          {
           type: 'column',
-          name: 'Joe',
+          name: 'Better',
           data: [3, 4, 2, 9, 5],
           color:'#39444e'
       }, {
